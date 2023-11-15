@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="container mt-3">
+    <div class="d-flex justify-content-between mb-5">
+        <h1 class="m-0"><a href="/" class="text-decoration-none">NVN</a></h1>
+        <div class="d-flex">
+            <div class="me-3 d-flex align-items-center">
+                <i class="bi bi-circle-half p-2 me-2 cursor-pointer" id="dark-mode-switch"></i>
+                <select name="lang" id="lang-select" class="form-select">
+                    <option value="en" selected>EN</option>
+                    <option value="vi">VI</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h5 class="mb-5">Welcome to War History api documentation!</h5>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>All event history pages</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span>https://nvn1.000webhostapp.com/api/events</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p>Example Response</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "events": [
+        {
+            "id": 2,
+            "name": "World War 2",
+            "thumbnail": "https://live.staticflickr.com/65535/53317112738_0b276efde9_z.jpg",
+            "year": 1939
+        },
+        {
+            "id": 4,
+            "name": "Gulf War",
+            "thumbnail": "https://live.staticflickr.com/65535/53316005192_ff1413bebf_z.jpg",
+            "year": 1990
+        },   
+    ],
+    "links": {
+        "store": "https://nvn1.000webhostapp.com/api/events"
+    }
+}                     
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get data of specific event page</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span>https://nvn1.000webhostapp.com/api/events/{{eventId}}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p>Example Response</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "event": {
+        "id": 75,
+        "thumbnail": "https://live.staticflickr.com/65535/53316871846_651b64b45b_z.jpg",
+        "year": 1914,
+        "content": "(Edited) World War I (28 July 1914 – 11 November 1918), often abbreviated as WWI, was one of the deadliest global conflicts in history. The main belligerents included much of Europe and their colonial empires, the Russian Empire, the United States, the Ottoman Empire and the Japanese Empire, with fighting occurring throughout Europe, the Middle East, Africa, the Pacific, and parts of Asia. An estimated 9 million soldiers were killed in combat, plus another 23 million wounded, while 5 million civilians died as a result of military action, hunger, and disease. Millions more died in genocides within the Ottoman Empire and in the 1918 influenza pandemic, which was exacerbated by the movement of combatants during the war.",
+        "created_at": "2023-11-06T17:56:40.000000Z",
+        "created_by": "nvn1",
+        "name": "World war 1"
+    },
+    "another_version": [
+        {
+            "link": "https://nvn1.000webhostapp.com/api/events/other_version/16",
+            "created_at": "2023-10-18T17:10:25.000000Z",
+            "created_by": "nvn1"
+        }
+    ],
+    "links": {
+        "thumbnail": "https://nvn1.000webhostapp.com/api/events/75/thumbnail"
+    }
+}                  
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get data of specific event page(other version)</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span>https://nvn1.000webhostapp.com/api/events/other_version/{{eventOtherVersionId}}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p>Example Response</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "event": {
+        "id": 16,
+        "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg",
+        "year": 1914,
+        "content": "World War I (28 July 1914 – 11 November 1918), often abbreviated as WWI, was one of the deadliest global conflicts in history. The main belligerents included much of Europe and their colonial empires, the Russian Empire, the United States, the Ottoman Empire and the Japanese Empire, with fighting occurring throughout Europe, the Middle East, Africa, the Pacific, and parts of Asia. An estimated 9 million soldiers were killed in combat, plus another 23 million wounded, while 5 million civilians died as a result of military action, hunger, and disease. Millions more died in genocides within the Ottoman Empire and in the 1918 influenza pandemic, which was exacerbated by the movement of combatants during the war.",
+        "name": "World war 1"
+    },
+    "links": {
+        "thumbnail": "https://nvn1.000webhostapp.com/api/events/16/thumbnail"
+    }
+}              
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(function(){
+        $('.link-area').on({
+            'mouseenter': function(){
+                $(this).find('i').removeClass('d-none');
+            },
+            'mouseleave': function(){
+                $(this).find('i').addClass('d-none');
+            }
+        })
+        $('.link-area i.bi-copy').on({
+            'click': function(){
+                let text = $(this).prev().text();
+                navigator.clipboard.writeText(text);
+            }
+        })
+    });
+</script>
+</html>

@@ -38,7 +38,8 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p>Example Response</p>
+                    <p class="mb-0">Example Response</p>
+                    <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
@@ -72,13 +73,35 @@
                         <span class="text-success me-2 fw-bold">GET</span>
                         <span>Get data of specific event page</span>
                     </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
                         <span>https://nvn1.000webhostapp.com/api/events/{{eventId}}</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventId</td>
+                                    <td>Yes</td>
+                                    <td>Number</td>
+                                    <td>Id of event page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col col-md-6">
-                    <p>Example Response</p>
+                    <p class="mb-0">Example Response</p>
+                    <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
@@ -114,13 +137,35 @@
                         <span class="text-success me-2 fw-bold">GET</span>
                         <span>Get data of specific event page(other version)</span>
                     </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
                         <span>https://nvn1.000webhostapp.com/api/events/other_version/{{eventOtherVersionId}}</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventOtherVersionId</td>
+                                    <td>Yes</td>
+                                    <td>Number</td>
+                                    <td>Id of event other version page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col col-md-6">
-                    <p>Example Response</p>
+                    <p class="mb-0">Example Response</p>
+                    <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
@@ -135,6 +180,225 @@
         "thumbnail": "https://nvn1.000webhostapp.com/api/events/16/thumbnail"
     }
 }              
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Register a new account</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span>https://nvn1.000webhostapp.com/api/register</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div class="mt-3">
+                        <p>When you successfully register, a notification email will be sent to the email you used to register</p>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>Yes</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>username</td>
+                                    <td>Yes</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>Yes</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example Response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "email": [
+            "The email field is required."
+        ],
+        "username": [
+            "The username field is required."
+        ],
+        "password": [
+            "The password field is required."
+        ]
+    }
+}         
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example Response when you successfully register</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "username": "nvn3",
+    "password": "$2y$10$x7YT0y/.ThoXAShX9BvFkeUtzM/gafAagrjGwwH9kjijMYcfqKMNu",
+    "updated_at": "2023-11-17T02:10:41.000000Z",
+    "created_at": "2023-11-17T02:10:41.000000Z",
+    "id": 14,
+    "api_token": "OSjtxg8VIoGgLy2fgk0yOrao4aTRAanDOiFxdcTWD9WAIV3Iu85b7vTBhZrR"
+}     
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Login</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span>https://nvn1.000webhostapp.com/api/login</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+                                    <td>Yes</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>Yes</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example Response when the login fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "username": [
+            "The username field is required."
+        ],
+        "password": [
+            "The password field is required."
+        ]
+    }
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example Response when you successfully sign in</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "status": "Authorised",
+    "api_token": "3rdsd1l2BMHLtAFSHooKF99YfZd8UcWGp6Tad5fD7kIVHLrYxUk9WxSZm9ez"
+}                            
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">Get</span>
+                        <span>Get the authenticated user's info</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span>https://nvn1.000webhostapp.com/api/user</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>api_token</td>
+                                    <td>Yes</td>
+                                    <td>String</td>
+                                    <td>It's the token that you get after login or register successfully</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example Response when failure</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}    
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example Response when success</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "info": {
+        "id": 3,
+        "username": "nvn2",
+        "password": "$2y$10$uvUri7L4ZWV6tCIabDTNfOQGL6.CWwGUiCeX0s2A.lJd85CKI1iTS",
+        "api_token": "3rdsd1l2BMHLtAFSHooKF99YfZd8UcWGp6Tad5fD7kIVHLrYxUk9WxSZm9ez",
+        "created_at": "2022-12-24T04:32:10.000000Z",
+        "updated_at": "2023-11-18T04:38:06.000000Z"
+    },
+    "is_admin": false
+}                        
                         </pre>
                     </div>
                 </div>

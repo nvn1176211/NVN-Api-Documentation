@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response</p>
+                    <p class="mb-0">Example response</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response</p>
+                    <p class="mb-0">Example response</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response</p>
+                    <p class="mb-0">Example response</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -180,6 +180,108 @@
         "thumbnail": "https://nvn1.000webhostapp.com/api/events/16/thumbnail"
     }
 }              
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Create new event page</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">thumbnail</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">image file</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">tag</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Id of event tag</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">content</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Content of event page</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">datetime</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Time of the event</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "tag": [
+            "The tag field is required."
+        ],
+        "content": [
+            "The content field is required."
+        ],
+        "datetime": [
+            "The datetime field is required."
+        ],
+        "thumbnail": [
+            "The thumbnail field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully create event page</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Event added."
+}
                         </pre>
                     </div>
                 </div>
@@ -234,7 +336,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response when the validation fail</p>
+                    <p class="mb-0">Example response when the validation fail</p>
                     <p>Status: 422</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -254,7 +356,7 @@
 }         
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example Response when you successfully register</p>
+                    <p class="mt-4 mb-0">Example response when you successfully register</p>
                     <p>Status: 201</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -311,7 +413,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response when the login fail</p>
+                    <p class="mb-0">Example response when the login fail</p>
                     <p>Status: 422</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -328,7 +430,7 @@
 }      
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example Response when you successfully sign in</p>
+                    <p class="mt-4 mb-0">Example response when you successfully sign in</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -375,7 +477,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response when failure</p>
+                    <p class="mb-0">Example response when failure</p>
                     <p>Status: 401</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -384,7 +486,7 @@
 }    
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example Response when success</p>
+                    <p class="mt-4 mb-0">Example response when success</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -441,7 +543,7 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example Response when failure</p>
+                    <p class="mb-0">Example response when failure</p>
                     <p>Status: 401</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -450,7 +552,7 @@
 }    
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example Response when success</p>
+                    <p class="mt-4 mb-0">Example response when success</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">

@@ -1,3 +1,6 @@
 .cursor-pointer{
     cursor: pointer;
 }
+html[data-bs-theme='dark'] .bg-light{
+    background-color: gray !important;
+}

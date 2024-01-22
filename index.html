@@ -210,6 +210,39 @@
             <div class="row">
                 <div class="col col-md-6">
                     <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get event tags</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "event_tags": [
+        {
+            "name": "World war 1",
+            "id": 1
+        {
+            "name": "Croatian War of Inde",
+            "id": 20
+        }
+    ]
+}           
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
                         <span class="text-success me-2 fw-bold">POST</span>
                         <span>Create new event page</span>
                     </p>

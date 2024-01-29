@@ -345,6 +345,185 @@
             <div class="row">
                 <div class="col col-md-6">
                     <p>
+                        <span class="text-success me-2 fw-bold">DELETE</span>
+                        <span>Delete event page</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Id of event page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Query parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when you're unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when specified page is not found</p>
+                    <p>Status: 404</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Not found"
+}     
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you delete last page of event tag</p>
+                    <p>Status: 403</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "You can't delete last event page."
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully delete page</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Event page deleted."
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">DELETE</span>
+                        <span>Delete event page(other version)</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events/other_version/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Id of event page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Query parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when you're unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when specified page is not found</p>
+                    <p>Status: 404</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Not found"
+}     
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully delete page</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Event page deleted."
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
                         <span class="text-success me-2 fw-bold">POST</span>
                         <span>Register a new account</span>
                     </p>
@@ -509,7 +688,7 @@
                     </div>
                     <div>
                         <table class="table table-bordered caption-top">
-                            <caption>Body parameters</caption>
+                            <caption>Query parameters</caption>
                             <thead>
                                 <tr>
                                     <th>Name</th>

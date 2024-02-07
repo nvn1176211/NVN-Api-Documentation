@@ -244,6 +244,81 @@
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Create new event tag</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">http://nvnwh.atwebpages.com/api/event_tags</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">name</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">tag name</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "name": [
+            "The name field must be lowercase."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully create event page</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Event tag added."
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
                         <span>Create new event page</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">

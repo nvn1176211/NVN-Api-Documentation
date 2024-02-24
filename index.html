@@ -30,20 +30,20 @@
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">GET</span>
-                        <span>All event history pages</span>
+                        <span>Get event tags</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap">https://nvn1.000webhostapp.com/api/events</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
                         <table class="table table-bordered caption-top">
-                            <caption>Path parameters</caption>
+                            <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -64,173 +64,15 @@
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "events": [
-        {
-            "id": 2,
-            "name": "World War 2",
-            "thumbnail": "https://live.staticflickr.com/65535/53317112738_0b276efde9_z.jpg",
-            "year": 1939
-        },
-        {
-            "id": 4,
-            "name": "Gulf War",
-            "thumbnail": "https://live.staticflickr.com/65535/53316005192_ff1413bebf_z.jpg",
-            "year": 1990
-        },   
-    ],
-    "links": {
-        "store": "https://nvn1.000webhostapp.com/api/events"
-    }
-}                     
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-top border-secondary pt-2 mb-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <p>
-                        <span class="text-success me-2 fw-bold">GET</span>
-                        <span>Get data of specific event page</span>
-                    </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events/{{eventId}}</span>
-                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
-                    </div>
-                    <div>
-                        <table class="table table-bordered caption-top">
-                            <caption>Path parameters</caption>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Required</th>
-                                    <th>Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-wrap text-break">eventId</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Id of event page</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "event": {
-        "id": 75,
-        "thumbnail": "https://live.staticflickr.com/65535/53316871846_651b64b45b_z.jpg",
-        "year": 1914,
-        "content": "(Edited) World War I (28 July 1914 – 11 November 1918), often abbreviated as WWI, was one of the deadliest global conflicts in history. The main belligerents included much of Europe and their colonial empires, the Russian Empire, the United States, the Ottoman Empire and the Japanese Empire, with fighting occurring throughout Europe, the Middle East, Africa, the Pacific, and parts of Asia. An estimated 9 million soldiers were killed in combat, plus another 23 million wounded, while 5 million civilians died as a result of military action, hunger, and disease. Millions more died in genocides within the Ottoman Empire and in the 1918 influenza pandemic, which was exacerbated by the movement of combatants during the war.",
-        "f1_created_at": "2023/11/06 17:56",
-        "created_by": "nvn1",
-        "name": "World war 1"
-    },
-    "another_version": [
-        {
-            "link": "https://nvn1.000webhostapp.com/api/events/other_version/16",
-            "f1_created_at": "2023/11/06 17:56",
-            "created_by": "nvn1"
-        }
-    ],
-    "links": {
-        "thumbnail": "https://nvn1.000webhostapp.com/api/events/75/thumbnail"
-    }
-}                  
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-top border-secondary pt-2 mb-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <p>
-                        <span class="text-success me-2 fw-bold">GET</span>
-                        <span>Get data of specific event page(other version)</span>
-                    </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events/other_version/{{eventOtherVersionId}}</span>
-                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
-                    </div>
-                    <div>
-                        <table class="table table-bordered caption-top">
-                            <caption>Path parameters</caption>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Required</th>
-                                    <th>Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-wrap text-break">eventOtherVersionId</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Id of event other version page</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "event": {
-        "id": 16,
-        "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg",
-        "year": 1914,
-        "content": "World War I (28 July 1914 – 11 November 1918), often abbreviated as WWI, was one of the deadliest global conflicts in history. The main belligerents included much of Europe and their colonial empires, the Russian Empire, the United States, the Ottoman Empire and the Japanese Empire, with fighting occurring throughout Europe, the Middle East, Africa, the Pacific, and parts of Asia. An estimated 9 million soldiers were killed in combat, plus another 23 million wounded, while 5 million civilians died as a result of military action, hunger, and disease. Millions more died in genocides within the Ottoman Empire and in the 1918 influenza pandemic, which was exacerbated by the movement of combatants during the war.",
-        "name": "World war 1"
-    },
-    "links": {
-        "thumbnail": "https://nvn1.000webhostapp.com/api/events/16/thumbnail"
-    }
-}              
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-top border-secondary pt-2 mb-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <p>
-                        <span class="text-success me-2 fw-bold">GET</span>
-                        <span>Get event tags</span>
-                    </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags</span>
-                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
     "event_tags": [
         {
             "name": "World war 1",
-            "id": 1
+            "id": 1,
+            "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg"
         {
-            "name": "Croatian War of Inde",
-            "id": 20
+            "id": 2,
+            "name": "world war 2",
+            "thumbnail": "https://live.staticflickr.com/65535/53317112738_0b276efde9_z.jpg"
         }
     ]
 }           
@@ -243,10 +85,99 @@
             <div class="row">
                 <div class="col col-md-6">
                     <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get a specific event tag</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Tag id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Query parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">No</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully. It is used to check which pages the current user has voted.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "event_tag": {
+        "name": "world war 2"
+    },
+    "events": [
+        {
+            "voted": "yes",
+            "id": 99,
+            "thumbnail": "https://live.staticflickr.com/65535/53511004804_616fd8c6dc_o.jpg",
+            "votes": 2,
+            "content": "test2",
+            "author_name": "nvn1",
+            "f1_created_at": "2024/02/16 08:20"
+        },
+        {
+            "voted": "no",
+            "id": 98,
+            "thumbnail": "https://live.staticflickr.com/65535/53511004804_616fd8c6dc_o.jpg",
+            "votes": 1,
+            "content": "test1",
+            "author_name": "nvn1",
+            "f1_created_at": "2024/02/16 08:19"
+        }
+    ]
+}     
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
                         <span class="text-success me-2 fw-bold">POST</span>
                         <span>Create new event tag</span>
                     </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
                         <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
@@ -255,9 +186,9 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -330,9 +261,9 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -435,9 +366,9 @@
                             <caption>Path parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -456,9 +387,9 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -517,94 +448,6 @@
             <div class="row">
                 <div class="col col-md-6">
                     <p>
-                        <span class="text-success me-2 fw-bold">
-                            GET
-                            <sup title="My server doesn't support DELETE method" class="cursor-pointer text-primary">[*]</sup>
-                        </span>
-                        <span>Delete event page(other version)</span>
-                    </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events/other_version/{id}/delete</span>
-                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
-                    </div>
-                    <div>
-                        <table class="table table-bordered caption-top">
-                            <caption>Path parameters</caption>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Required</th>
-                                    <th>Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-wrap text-break">id</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Id of event page</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <table class="table table-bordered caption-top">
-                            <caption>Query parameters</caption>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Required</th>
-                                    <th>Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-wrap text-break">api_token</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">String</td>
-                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <p class="mb-0">Example response when you're unauthenticated</p>
-                    <p>Status: 401</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "Unauthenticated."
-}      
-                        </pre>
-                    </div>
-                    <p class="mt-4 mb-0">Example response when specified page is not found</p>
-                    <p>Status: 404</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "Not found"
-}     
-                        </pre>
-                    </div>
-                    <p class="mt-4 mb-0">Example response when you successfully delete page</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "Event page deleted."
-}
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-top border-secondary pt-2 mb-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <p>
                         <span class="text-success me-2 fw-bold">POST</span>
                         <span>Register a new account</span>
                     </p>
@@ -620,9 +463,9 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -700,9 +543,9 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -772,9 +615,9 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -804,6 +647,7 @@
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
+    "id": "1",
     "username": "nvn2",
     "api_token": "3rdsd1l2BMHLtAFSHooKF99YfZd8UcWGp6Tad5fD7kIVHLrYxUk9WxSZm9ez",
     "is_admin": false
@@ -832,9 +676,9 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th style="width: 90px;">Name</th>
                                     <th>Required</th>
-                                    <th>Value</th>
+                                    <th style="width: 80px;">Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -866,6 +710,93 @@
 {
     "data": "User logged out."
 }                   
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">Post</span>
+                        <span>Toggle page voting</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/votes/toggle</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div class="mt-3">
+                        <p>If you voted this page, this action perform unvote. If you haven't voted this page, this action perform vote.</p>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">event_id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Event page id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when Unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}    
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "event_id": [
+            "The event id field is required."
+        ]
+    }
+}                 
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success vote page</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Voted."
+}            
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success unvote page</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Vote deleted."
+}            
                         </pre>
                     </div>
                 </div>

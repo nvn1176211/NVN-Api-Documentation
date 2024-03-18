@@ -24,16 +24,16 @@
         </div>
     </div>
     <div>
-        <h5 class="mb-5">Welcome to War History api documentation!</h5>
+        <h5 class="mb-5">Welcome to NVN api documentation!</h5>
         <div class="border-top border-secondary pt-2 mb-5">
             <div class="row">
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">GET</span>
-                        <span>Get event tags</span>
+                        <span>Get pages</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/pages</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -52,7 +52,7 @@
                                     <td class="text-wrap text-break">search</td>
                                     <td class="text-wrap text-break">No</td>
                                     <td class="text-wrap text-break">String</td>
-                                    <td class="text-wrap text-break">Event name</td>
+                                    <td class="text-wrap text-break">Page name</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -64,18 +64,23 @@
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "event_tags": [
+    "pages": [
         {
             "id": 1,
-            "name": "world war 1",
-            "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg"
+            "name": "How to reduce inflation?",
+            "thumbnail": "",
+            "updated_at": "2024-03-17T12:10:23.000000Z",
+            "type": "discussions"
+        },
         {
             "id": 2,
-            "name": "world war 2",
-            "thumbnail": "https://live.staticflickr.com/65535/53317112738_0b276efde9_z.jpg"
+            "name": "World War I",
+            "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg",
+            "updated_at": "2024-03-11T11:15:58.000000Z",
+            "type": "articles"
         }
     ]
-}           
+}     
                         </pre>
                     </div>
                 </div>
@@ -86,43 +91,10 @@
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">GET</span>
-                        <span>Get event tags, just simple data, no filter, sort by tag name</span>
+                        <span>Get a specific article</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/simple_event_tags</span>
-                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "event_tags": [
-        {
-            "id": 1,
-            "name": "world war 1"
-        {
-            "id": 2,
-            "name": "world war 2"
-        }
-    ]
-}           
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-top border-secondary pt-2 mb-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <p>
-                        <span class="text-success me-2 fw-bold">GET</span>
-                        <span>Get a specific event tag</span>
-                    </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags/{id}</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/articles/{id}</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -141,7 +113,7 @@
                                     <td class="text-wrap text-break">id</td>
                                     <td class="text-wrap text-break">Yes</td>
                                     <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Tag id</td>
+                                    <td class="text-wrap text-break">Article id</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -174,30 +146,107 @@
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "event_tag": {
-        "name": "world war 2"
+    "voted": "yes",
+    "id": 1,
+    "name": "World War II",
+    "content": "World War II or the Second World War was a global conflict that lasted from 1939 to 1945. The vast majority of the world's countries, including all the great powers, fought as part of two opposing military alliances: the Allies and the Axis.",
+    "votes": 1,
+    "author_name": "admin",
+    "f1_created_at": "2024/03/06 09:39"
+}  
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get a specific discussion</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/discussions/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Discussion id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Query parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">No</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully. It is used to check which pages the current user has voted.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "discussion": {
+        "voted": "yes",
+        "id": 1,
+        "name": "How to reduce inflation?",
+        "content": "Hi. I’m trying to learn more about national/global economics in order to be a better and more informed citizen. I’ve realized I have no clue how inflation works. Is it just destined to keep going up? Is there any way to reverse, instead of just slowing its rate? If not, isn’t that a pretty unsustainable foundation to build an economy on? Thank you for reading my stupid question. I look forward to learning from your responses.",
+        "votes": 2,
+        "author_name": "admin",
+        "f1_created_at": "2024/03/07 10:21"
     },
-    "events": [
+    "opinions": [
         {
-            "voted": "yes",
-            "id": 99,
-            "thumbnail": "https://live.staticflickr.com/65535/53511004804_616fd8c6dc_o.jpg",
+            "voted": "no",
+            "id": 3,
+            "content": "Inflation is caused by the government, anyone who tells you otherwise is ignorant or lying. Governments spend more than they being in, requiring them to sell bonds, or IOUs, in order to fund their budget.\n\nCentral banks create inflation by buying this government debt (treasuries or IOUs) with fake money, which is what is meant by printing money, in order to create liquidity in the market, because people don’t want to buy bonds from a government that doesn’t look like it can repay them with interest. They would demand a higher interest rate for the extra risk. But the Federal Reserve Bank, the US’s central bank, for example, will buy bonds with fake money so that the bond market stays liquid and lenders keep buying bonds. Because they are pumping more money into the economy but adding no actual value, there are more dollars to share the same total worth. Therefore, each dollar in existence becomes a little less valuable, which means you need more of them to buy goods and services. This is inflation.\n\nA central bank can reduce inflation by raising interest rates, which means they have to sell those IOUs back to the banks they bought them from, thereby taking dollars back out of the economy, which means there are fewer dollars to share the total value.",
             "votes": 2,
-            "content": "test2",
-            "author_name": "nvn1",
-            "f1_created_at": "2024/02/16 08:20"
+            "author_name": "user3",
+            "f1_created_at": "2024/03/06 00:00"
         },
         {
             "voted": "no",
-            "id": 98,
-            "thumbnail": "https://live.staticflickr.com/65535/53511004804_616fd8c6dc_o.jpg",
+            "id": 1,
+            "content": "Increase interest rates - reduces the amount of cash flowing through the economy.",
             "votes": 1,
-            "content": "test1",
-            "author_name": "nvn1",
-            "f1_created_at": "2024/02/16 08:19"
+            "author_name": "user1",
+            "f1_created_at": "2024/03/07 10:27"
         }
     ]
-}     
+}
                         </pre>
                     </div>
                 </div>
@@ -208,10 +257,10 @@
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">POST</span>
-                        <span>Create new event tag</span>
+                        <span>Create new article</span>
                     </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/event_tags</span>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/articles</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -233,10 +282,22 @@
                                     <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
                                 </tr>
                                 <tr>
+                                    <td class="text-wrap text-break">thumbnail</td>
+                                    <td class="text-wrap text-break">No</td>
+                                    <td class="text-wrap text-break">image file</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                                <tr>
                                     <td class="text-wrap text-break">name</td>
                                     <td class="text-wrap text-break">Yes</td>
                                     <td class="text-wrap text-break">String</td>
-                                    <td class="text-wrap text-break">tag name</td>
+                                    <td class="text-wrap text-break">Article name</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">content</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Content of article</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -260,18 +321,24 @@
     "message": "The given data was invalid.",
     "errors": {
         "name": [
-            "The name field must be lowercase."
+            "The tag field is required."
+        ],
+        "content": [
+            "The content field is required."
+        ],
+        "thumbnail": [
+            "The thumbnail must be an image."
         ]
     }
 }
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example response when you successfully create event page</p>
+                    <p class="mt-4 mb-0">Example response when you successfully create article</p>
                     <p>Status: 201</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "message": "Event tag added."
+    "message": "New article added."
 }
                         </pre>
                     </div>
@@ -283,10 +350,10 @@
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">POST</span>
-                        <span>Create new event page</span>
+                        <span>Create new discussion</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/discussions</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -309,27 +376,21 @@
                                 </tr>
                                 <tr>
                                     <td class="text-wrap text-break">thumbnail</td>
-                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">No</td>
                                     <td class="text-wrap text-break">image file</td>
                                     <td class="text-wrap text-break"></td>
                                 </tr>
                                 <tr>
-                                    <td class="text-wrap text-break">tag</td>
+                                    <td class="text-wrap text-break">name</td>
                                     <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Id of event tag</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Discussion name</td>
                                 </tr>
                                 <tr>
                                     <td class="text-wrap text-break">content</td>
                                     <td class="text-wrap text-break">Yes</td>
                                     <td class="text-wrap text-break">String</td>
-                                    <td class="text-wrap text-break">Content of event page</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-wrap text-break">datetime</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">String</td>
-                                    <td class="text-wrap text-break">Time of the event</td>
+                                    <td class="text-wrap text-break">Content of discussion</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -352,28 +413,25 @@
 {
     "message": "The given data was invalid.",
     "errors": {
-        "tag": [
+        "name": [
             "The tag field is required."
         ],
         "content": [
             "The content field is required."
         ],
-        "datetime": [
-            "The datetime field is required."
-        ],
         "thumbnail": [
-            "The thumbnail field is required."
+            "The thumbnail must be an image."
         ]
     }
 }
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example response when you successfully create event page</p>
+                    <p class="mt-4 mb-0">Example response when you successfully create discussion</p>
                     <p>Status: 201</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "message": "Event added."
+    "message": "New discussion added."
 }
                         </pre>
                     </div>
@@ -384,39 +442,16 @@
             <div class="row">
                 <div class="col col-md-6">
                     <p>
-                        <span class="text-success me-2 fw-bold">
-                            GET
-                        </span>
-                        <span>Delete event page</span>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Create new opinion</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/events/{id}/delete</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/opinions</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
                         <table class="table table-bordered caption-top">
-                            <caption>Path parameters</caption>
-                            <thead>
-                                <tr>
-                                    <th style="width: 90px;">Name</th>
-                                    <th>Required</th>
-                                    <th style="width: 80px;">Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-wrap text-break">id</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Id of event page</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <table class="table table-bordered caption-top">
-                            <caption>Query parameters</caption>
+                            <caption>Body parameters</caption>
                             <thead>
                                 <tr>
                                     <th style="width: 90px;">Name</th>
@@ -432,12 +467,24 @@
                                     <td class="text-wrap text-break">String</td>
                                     <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
                                 </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">discussion_id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Discussion id</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">content</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Content of opinion</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example response when you're unauthenticated</p>
+                    <p class="mb-0">Example response when unauthenticated</p>
                     <p>Status: 401</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
@@ -446,21 +493,286 @@
 }      
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example response when specified page is not found</p>
-                    <p>Status: 404</p>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "message": "Not found"
-}     
+    "message": "The given data was invalid.",
+    "errors": {
+        "discussion_id": [
+            "The discussion id field is required."
+        ],
+        "content": [
+            "The content field is required."
+        ]
+    }
+}
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example response when you successfully delete page</p>
+                    <p class="mt-4 mb-0">Example response when you successfully create opinion</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "voted": "yes",
+    "id": 42,
+    "content": "1",
+    "votes": 1,
+    "author_name": "admin",
+    "f1_created_at": "2024/03/18 17:41"
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Toggle article voting</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/article_votes/toggle</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Article id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "id": [
+            "The id field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success vote</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Voted."
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success unvote</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">
 {
-    "message": "Event page deleted."
+    "message": "Vote deleted."
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Toggle discussion voting</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/discussion_votes/toggle</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Discussion id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "id": [
+            "The id field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success vote</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Voted."
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success unvote</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Vote deleted."
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Toggle opinion voting</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/opinion_votes/toggle</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 90px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Opinion id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "id": [
+            "The id field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success vote</p>
+                    <p>Status: 201</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Voted."
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success unvote</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Vote deleted."
 }
                         </pre>
                     </div>
@@ -733,93 +1045,6 @@
 {
     "data": "User logged out."
 }                   
-                        </pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border-top border-secondary pt-2 mb-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <p>
-                        <span class="text-success me-2 fw-bold">Post</span>
-                        <span>Toggle page voting</span>
-                    </p>
-                    <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/votes/toggle</span>
-                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
-                    </div>
-                    <div class="mt-3">
-                        <p>If you voted this page, this action perform unvote. If you haven't voted this page, this action perform vote.</p>
-                    </div>
-                    <div>
-                        <table class="table table-bordered caption-top">
-                            <caption>Body parameters</caption>
-                            <thead>
-                                <tr>
-                                    <th style="width: 90px;">Name</th>
-                                    <th>Required</th>
-                                    <th style="width: 80px;">Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-wrap text-break">api_token</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">String</td>
-                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-wrap text-break">event_id</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Event page id</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <p class="mb-0">Example response when Unauthenticated</p>
-                    <p>Status: 401</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "Unauthenticated."
-}    
-                        </pre>
-                    </div>
-                    <p class="mt-4 mb-0">Example response when the validation fail</p>
-                    <p>Status: 422</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "The given data was invalid.",
-    "errors": {
-        "event_id": [
-            "The event id field is required."
-        ]
-    }
-}                 
-                        </pre>
-                    </div>
-                    <p class="mt-4 mb-0">Example response when success vote page</p>
-                    <p>Status: 201</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "Voted."
-}            
-                        </pre>
-                    </div>
-                    <p class="mt-4 mb-0">Example response when success unvote page</p>
-                    <p>Status: 201</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
-{
-    "message": "Vote deleted."
-}            
                         </pre>
                     </div>
                 </div>

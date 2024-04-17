@@ -41,7 +41,7 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -102,7 +102,7 @@
                             <caption>Path parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -123,7 +123,7 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -175,7 +175,7 @@
                             <caption>Path parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -196,7 +196,7 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -231,6 +231,7 @@
     "opinions": [
         {
             "voted": "no",
+            "is_your_own": "yes",
             "id": 3,
             "content": "Inflation is caused by the government, anyone who tells you otherwise is ignorant or lying. Governments spend more than they being in, requiring them to sell bonds, or IOUs, in order to fund their budget.\n\nCentral banks create inflation by buying this government debt (treasuries or IOUs) with fake money, which is what is meant by printing money, in order to create liquidity in the market, because people don’t want to buy bonds from a government that doesn’t look like it can repay them with interest. They would demand a higher interest rate for the extra risk. But the Federal Reserve Bank, the US’s central bank, for example, will buy bonds with fake money so that the bond market stays liquid and lenders keep buying bonds. Because they are pumping more money into the economy but adding no actual value, there are more dollars to share the same total worth. Therefore, each dollar in existence becomes a little less valuable, which means you need more of them to buy goods and services. This is inflation.\n\nA central bank can reduce inflation by raising interest rates, which means they have to sell those IOUs back to the banks they bought them from, thereby taking dollars back out of the economy, which means there are fewer dollars to share the total value.",
             "votes": 2,
@@ -239,6 +240,7 @@
         },
         {
             "voted": "no",
+            "is_your_own": "no",
             "id": 1,
             "content": "Increase interest rates - reduces the amount of cash flowing through the economy.",
             "votes": 1,
@@ -268,7 +270,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -361,7 +363,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -454,7 +456,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -516,6 +518,136 @@
                         <pre class="m-0">
 {
     "voted": "yes",
+    "is_your_own": "yes",
+    "id": 42,
+    "content": "1",
+    "votes": 1,
+    "author_name": "admin",
+    "f1_created_at": "2024/03/18 17:41"
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Update opinion</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/opinions/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Opinion id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">discussion_id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Discussion id</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">opinion_id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Opinion id</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">content</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Content of opinion</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when opinon is not your own</p>
+                    <p>Status: 403</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Forbidden"
+}   
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "discussion_id": [
+            "The discussion id field is required."
+        ],
+        "opinion_id": [
+            "The opinion id field is required."
+        ],
+        "content": [
+            "The content field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully create opinion</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "voted": "yes",
+    "is_your_own": "yes",
     "id": 42,
     "content": "1",
     "votes": 1,
@@ -543,7 +675,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -627,7 +759,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -711,7 +843,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -798,7 +930,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -878,7 +1010,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -950,7 +1082,7 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -1011,7 +1143,7 @@
                             <caption>Body parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 90px;">Name</th>
+                                    <th style="width: 110px;">Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>

@@ -69,14 +69,16 @@
             "id": 1,
             "name": "How to reduce inflation?",
             "thumbnail": "",
-            "updated_at": "2024-03-17T12:10:23.000000Z",
+            "f1_created_at": "2024/04/02 16:26",
+            "author_name": "admin",
             "type": "discussions"
         },
         {
             "id": 2,
             "name": "World War I",
             "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg",
-            "updated_at": "2024-03-11T11:15:58.000000Z",
+            "f1_created_at": "2024/04/02 16:26",
+            "author_name": "admin",
             "type": "articles"
         }
     ]
@@ -148,6 +150,7 @@
 {
     "voted": "yes",
     "id": 1,
+    "is_your_own": "yes",
     "name": "World War II",
     "content": "World War II or the Second World War was a global conflict that lasted from 1939 to 1945. The vast majority of the world's countries, including all the great powers, fought as part of two opposing military alliances: the Allies and the Axis.",
     "votes": 1,
@@ -221,6 +224,7 @@
 {
     "discussion": {
         "voted": "yes",
+        "is_your_own": "yes",
         "id": 1,
         "name": "How to reduce inflation?",
         "content": "Hi. I’m trying to learn more about national/global economics in order to be a better and more informed citizen. I’ve realized I have no clue how inflation works. Is it just destined to keep going up? Is there any way to reverse, instead of just slowing its rate? If not, isn’t that a pretty unsustainable foundation to build an economy on? Thank you for reading my stupid question. I look forward to learning from your responses.",
@@ -352,6 +356,117 @@
                 <div class="col col-md-6">
                     <p>
                         <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Update article</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/articles/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Article id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">content</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Content of opinion</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when article is not your own</p>
+                    <p>Status: 403</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Forbidden"
+}   
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "content": [
+            "The content field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully update article</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "voted": "yes",
+    "is_your_own": "yes",
+    "id": 42,
+    "content": "1",
+    "votes": 1,
+    "author_name": "admin",
+    "f1_created_at": "2024/03/18 17:41"
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
                         <span>Create new discussion</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
@@ -434,6 +549,117 @@
                         <pre class="m-0">
 {
     "message": "New discussion added."
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Update discussion</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/discussions/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Discussion id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">content</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">Content of opinion</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}      
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when discussion is not your own</p>
+                    <p>Status: 403</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Forbidden"
+}   
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when the validation fail</p>
+                    <p>Status: 422</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "content": [
+            "The content field is required."
+        ]
+    }
+}
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when you successfully update discussion</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "voted": "yes",
+    "is_your_own": "yes",
+    "id": 42,
+    "content": "1",
+    "votes": 1,
+    "author_name": "admin",
+    "f1_created_at": "2024/03/18 17:41"
 }
                         </pre>
                     </div>
@@ -587,12 +813,6 @@
                                     <td class="text-wrap text-break">Discussion id</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-wrap text-break">opinion_id</td>
-                                    <td class="text-wrap text-break">Yes</td>
-                                    <td class="text-wrap text-break">Number</td>
-                                    <td class="text-wrap text-break">Opinion id</td>
-                                </tr>
-                                <tr>
                                     <td class="text-wrap text-break">content</td>
                                     <td class="text-wrap text-break">Yes</td>
                                     <td class="text-wrap text-break">String</td>
@@ -631,9 +851,6 @@
         "discussion_id": [
             "The discussion id field is required."
         ],
-        "opinion_id": [
-            "The opinion id field is required."
-        ],
         "content": [
             "The content field is required."
         ]
@@ -641,7 +858,7 @@
 }
                         </pre>
                     </div>
-                    <p class="mt-4 mb-0">Example response when you successfully create opinion</p>
+                    <p class="mt-4 mb-0">Example response when you successfully update opinion</p>
                     <p>Status: 200</p>
                     <div class="bg-light p-2">
                         <pre class="m-0">

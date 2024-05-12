@@ -54,6 +54,12 @@
                                     <td class="text-wrap text-break">String</td>
                                     <td class="text-wrap text-break">Page name</td>
                                 </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">No</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully. It is used to check which pages the current user has voted.</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -71,6 +77,8 @@
             "thumbnail": "",
             "f1_created_at": "2024/04/02 16:26",
             "author_name": "admin",
+            "voted": "yes",
+            "votes": 1,
             "type": "discussions"
         },
         {
@@ -79,6 +87,8 @@
             "thumbnail": "https://live.staticflickr.com/65535/53317226249_cfd0651d0f_z.jpg",
             "f1_created_at": "2024/04/02 16:26",
             "author_name": "admin",
+            "voted": "no",
+            "votes": 21,
             "type": "articles"
         }
     ]
@@ -884,7 +894,7 @@
                         <span>Toggle article voting</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/article_votes/toggle</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/votes/articles/toggle</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -968,7 +978,7 @@
                         <span>Toggle discussion voting</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/discussion_votes/toggle</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/votes/discussions/toggle</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -1052,7 +1062,7 @@
                         <span>Toggle opinion voting</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/opinion_votes/toggle</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/votes/opinions/toggle</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -1291,7 +1301,7 @@
                         <span>Get the authenticated user's info</span>
                     </p>
                     <div class="link-area bg-light p-2 d-flex justify-content-between">
-                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/user</span>
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/users</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
                     <div>
@@ -1333,6 +1343,66 @@
 {
     "id": "1",
     "username": "nvn2",
+    "email": "nvnit1176211@gmail.com",
+    "api_token": "3rdsd1l2BMHLtAFSHooKF99YfZd8UcWGp6Tad5fD7kIVHLrYxUk9WxSZm9ez",
+    "is_admin": false
+}                        
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">Post</span>
+                        <span>Change account's password</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between">
+                        <span class="text-wrap text-break">https://nvn1.000webhostapp.com/api/users/password/change</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Body parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response when unauthenticated</p>
+                    <p>Status: 401</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}    
+                        </pre>
+                    </div>
+                    <p class="mt-4 mb-0">Example response when success</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "id": "1",
+    "username": "nvn2",
+    "email": "nvnit1176211@gmail.com",
     "api_token": "3rdsd1l2BMHLtAFSHooKF99YfZd8UcWGp6Tad5fD7kIVHLrYxUk9WxSZm9ez",
     "is_admin": false
 }                        
